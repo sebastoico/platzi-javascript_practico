@@ -1,3 +1,4 @@
+/* General */
 :root {
   --white: #FFFFFF;
   --black: #000000;
@@ -8,16 +9,15 @@
   --md: 16px;
   --lg: 18px;
 }
-
 body {
   font-family: 'Quicksand', sans-serif;
   margin: 0;
 }
-
-.inactive {
+body .inactive {
   display: none;
 }
 
+/* Navbar (general) */
 nav {
   display: flex;
   justify-content: space-between;
@@ -26,6 +26,7 @@ nav {
 }
 .menu {
   display: none;
+  cursor: pointer;
 }
 .logo {
   width: 100px;
@@ -63,7 +64,7 @@ nav {
   cursor: pointer;
 }
 
-
+/* Desktop menu */
 .desktop-menu {
   position: absolute;
   top: 60px;
@@ -100,13 +101,58 @@ nav {
   font-size: var(--sm);
 }
 
+/* Mobile menu */
+.mobile-menu {
+  position: absolute;
+  top: 60px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+.mobile-menu ul {
+  padding: 0;
+  margin: 24px 0 24px 0;
+  list-style: none;
+}
+.mobile-menu ul:first-child {
+  border-bottom: 1px solid var(--very-light-pink);
+}
+.mobile-menu > ul:last-child li:first-child{
+  margin-bottom: 12px;
+}
+.mobile-menu ul li {
+  margin-bottom: 24px;
+}
+.mobile-menu ul li a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: bold;
+}
+.mobile-menu .email {
+  font-size: var(--sm);
+  font-weight: lighter;
+  margin-bottom: 12px;
+}
+.mobile-menu .sign-out {
+  font-size: var(--sm);
+  color: var(--hospital-green);
+}
 
 @media (max-width: 640px) {
   .menu {
     display: block;
   }
-
   .navbar-left ul, .navbar-email {
+    display: none;
+  }
+  .desktop-menu {
+    display: none;
+  }
+}
+@media (min-width: 641px) {
+  .mobile-menu {
     display: none;
   }
 }
