@@ -290,7 +290,7 @@ aside {
   display: grid;
   grid-template-columns: repeat(auto-fill, 240px);
   gap: 24px;
-  place-content: center;
+  place-content: left;
   padding: 24px;
 }
 .product-card {
@@ -302,6 +302,7 @@ aside {
   height: 240px;
   border-radius: 20px;
   object-fit: cover;
+  cursor: pointer;
 }
 .product-info {
   display: flex;
@@ -344,6 +345,7 @@ aside {
   }
   .cards-container {
     grid-template-columns: repeat(auto-fill, 140px);
+    place-content: center;
   }
   .product-card {
     width: 140px;

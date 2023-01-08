@@ -5,26 +5,42 @@ const orderIcon = document.querySelector(".navbar-shopping-cart");
 
 const desktopMenu = document.querySelector(".desktop-menu");
 const mobileMenu = document.querySelector(".mobile-menu");
-const shoppingCartcontainer = document.querySelector("#shopping-cart-detail");
+const shoppingCartContainer = document.querySelector("#shopping-cart-detail");
+const productDetailContainer = document.querySelector("#product-detail");
+const productDetailClose = document.querySelector(".product-detail-close");
 
 menuEmail.addEventListener("click", toggleDesktopMenu);
 menuIcon.addEventListener("click", toggleMobileMenu);
 orderIcon.addEventListener("click", toggleOrderAside);
+productDetailClose.addEventListener("click", closeProductDetailAside);
 
 function toggleDesktopMenu() {
   desktopMenu.classList.toggle("inactive");
-  shoppingCartcontainer.classList.add("inactive");
+  shoppingCartContainer.classList.add("inactive");
+  productDetailContainer.classList.add("inactive");
 }
 
 function toggleMobileMenu() {
   mobileMenu.classList.toggle("inactive");
-  shoppingCartcontainer.classList.add("inactive");
+  shoppingCartContainer.classList.add("inactive");
+  productDetailContainer.classList.add("inactive");
 }
 
 function toggleOrderAside() {
-  shoppingCartcontainer.classList.toggle("inactive");
+  shoppingCartContainer.classList.toggle("inactive");
   desktopMenu.classList.add("inactive");
   mobileMenu.classList.add("inactive");
+  productDetailContainer.classList.add("inactive");
+}
+
+function openProductDetailAside() {
+  productDetailContainer.classList.remove("inactive");
+  desktopMenu.classList.add("inactive");
+  mobileMenu.classList.add("inactive");
+  shoppingCartContainer.classList.add("inactive");
+}
+function closeProductDetailAside() {
+  productDetailContainer.classList.add("inactive");
 }
 
 // Cards display
@@ -60,6 +76,8 @@ function renderProducts(productList) {
     productPrice.innerText = "$ " + product.price.toFixed(2);
     productName.innerText = product.name;
     productInfoCart.setAttribute("src", "./assets/icons/bt_add_to_cart.svg");
+
+    productImage.addEventListener("click", openProductDetailAside);
   
     productInfoFigure.append(productInfoCart);
     productInfoDiv.append(productPrice, productName);
