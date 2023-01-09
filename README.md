@@ -1,5 +1,9 @@
-# Platzi - Frontend Developer
-Códigos del curso ["Curso Práctico de Frontend Developer"](https://platzi.com/cursos/frontend-developer-practico/) impartido por Estefany Aguilar.
+# Platzi - JavaScript Práctico
+Códigos del curso ["Curso Práctico de JavaScript"](https://platzi.com/cursos/javascript-practico/) impartido por Juan David Castro Gallego.
+
+Para su realización se generó una copia del repositorio hecho para el curso ["Curso Práctico de Frontend Developer"](https://github.com/sebastoico/platzi-frontend_developer) puesto que no es posible hacer fork de repositorios propios. Sin embargo, se creó una nueva rama para poder realizar el Pull Request.
+
+El resultado se encuentra desplegado en [GitHub Pages](https://sebastoico.github.io/platzi-javascript_practico/index.html).
 
 Para el proyecto se usaron los diseños proporcionados en el curso:
 
